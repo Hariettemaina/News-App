@@ -21,3 +21,25 @@ class ArticleTest(unittest.TestCase):
         Test case to check if self.new article is an intance of Article
         '''
         self.assertTrue( isinstance( self.new_article, Article ) )
+        
+    def test_init(self):
+        '''
+        Test case to check if the Article class is initialised
+        '''
+        self.assertEqual( self.new_article.source, 'the-next-web')
+        self.assertEqual( self.new_article.title, 'PlayStation\'s $30 PS4 gamepad for kids is totally adorable')
+        self.assertEqual( self.new_article.urlToImage, 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2017/10/PS4-Mini-gamepad-social.jpg')
+        self.assertEqual( self.new_article.description, 'Sony\'s teamed up with Hori on its new $30 Mini Wired Gamepad, which is designed for younger PS4 players with smaller hands.')
+        self.assertEqual( self.new_article.urlToArticle, 'https://thenextweb.com/gaming/2017/10/19/playstations-30-ps4-gamepad-for-kids-is-totally-adorable/')
+        self.assertEqual( self.new_article.publishedAt, '2017-10-19T13:00:00Z')
+
+    def test_publish_date_format(self):
+        '''
+        Test case to check if UTC date format is converted to a display-friendly format
+        '''
+        display_friendly_format = self.new_article.publish_date_format(self.new_article.publishedAt)
+        self.assertEqual( display_friendly_format, '2017-10-19')
+        
+
+        
+        
