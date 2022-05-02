@@ -49,23 +49,23 @@ def process_sources(source_list):
 
     return source_results
 
-# def get_articles(id):
-#     '''
-#     Function to get a source and it's articles
-#     '''
-#     get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
+def get_articles(id):
+    '''
+    Function to get a source and it's articles
+    '''
+    get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
 
-#     with urllib.request.urlopen(get_articles_url) as url:
-#         get_articles_data = url.read()
-#         get_articles_response = json.loads(get_articles_data)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
 
-#         articles_results = None
+        articles_results = None
 
-#         if get_articles_response['articles']:
-#             articles_results_list = get_articles_response['articles']
-#             articles_results = process_articles(articles_results_list)
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_articles(articles_results_list)
 
-#     return articles_results
+    return articles_results
 
 # def process_articles(article_list):
 #     '''
