@@ -14,7 +14,7 @@ class ArticleTest(unittest.TestCase):
         '''
         Set up method to run before each test case
         '''
-        self.new_article = Article('the-next-web','PlayStation\'s $30 PS4 gamepad for kids is totally adorable', 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2017/10/PS4-Mini-gamepad-social.jpg', 'Sony\'s teamed up with Hori on its new $30 Mini Wired Gamepad, which is designed for younger PS4 players with smaller hands.', 'https://thenextweb.com/gaming/2017/10/19/playstations-30-ps4-gamepad-for-kids-is-totally-adorable/', '2017-10-19T13:00:00Z')
+        self.new_article = Article("Scott Morrison and Anthony Albanese are disaster prepping for tomorrow's likely election campaign interest rate hike - ABC News")
     
     def test_instacnce(self):
         '''
@@ -26,19 +26,19 @@ class ArticleTest(unittest.TestCase):
         '''
         Test case to check if the Article class is initialised
         '''
-        self.assertEqual( self.new_article.source, 'the-next-web')
-        self.assertEqual( self.new_article.title, 'PlayStation\'s $30 PS4 gamepad for kids is totally adorable')
-        self.assertEqual( self.new_article.urlToImage, 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2017/10/PS4-Mini-gamepad-social.jpg')
-        self.assertEqual( self.new_article.description, 'Sony\'s teamed up with Hori on its new $30 Mini Wired Gamepad, which is designed for younger PS4 players with smaller hands.')
-        self.assertEqual( self.new_article.urlToArticle, 'https://thenextweb.com/gaming/2017/10/19/playstations-30-ps4-gamepad-for-kids-is-totally-adorable/')
-        self.assertEqual( self.new_article.publishedAt, '2017-10-19T13:00:00Z')
+        self.assertEqual( self.new_article.source, 'ABC News (AU)')
+        self.assertEqual( self.new_article.title, "Scott Morrison and Anthony Albanese are disaster prepping for tomorrow's likely election campaign interest rate hike - ABC News")
+        self.assertEqual( self.new_article.urlToImage, "https://live-production.wcms.abc-cdn.net.au/33f0ed4265c51b2d24d6c3b9a2e594a9?impolicy=wcms_crop_resize&cropH=450&cropW=800&xPos=0&yPos=75&width=862&height=485")
+        self.assertEqual( self.new_article.description, "Such is the pressure for governments to hold a hose in the housing conflagration, it matters not that they're squirting kerosene, writes Annabel Crabb.")
+        self.assertEqual( self.new_article.urlToArticle, 'https://www.abc.net.au/news/2022-05-02/election-2022-morrison-albanese-rba-interest-rate-rise/101031740')
+        self.assertEqual( self.new_article.publishedAt, "2022-05-02T07:55:08Z")
 
     def test_publish_date_format(self):
         '''
         Test case to check if UTC date format is converted to a display-friendly format
         '''
         display_friendly_format = self.new_article.publish_date_format(self.new_article.publishedAt)
-        self.assertEqual( display_friendly_format, '2017-10-19')
+        self.assertEqual( display_friendly_format, '2022-05-02')
         
 
         
