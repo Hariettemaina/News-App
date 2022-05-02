@@ -67,34 +67,34 @@ def get_articles(id):
 
     return articles_results
 
-# def process_articles(article_list):
-#     '''
-#     Function that processes the article results and transform them to a list of objects
+def process_articles(article_list):
+    '''
+    Function that processes the article results and transform them to a list of objects
     
-#     Args:
-#         article_list: A list of dictionaries that contain article details
+    Args:
+        article_list: A list of dictionaries that contain article details
     
-#     Returns :
-#         article_results: A list of article objects
-#     '''
-#     article_results = []
+    Returns :
+        article_results: A list of article objects
+    '''
+    article_results = []
 
-#     for article_item in article_list:
-#         source = article_item.get('source')
-#         title = article_item.get('title')
-#         urlToImage = article_item.get('urlToImage')
-#         description = article_item.get('description')
-#         urlToArticle = article_item.get('url')
-#         publishedAt = article_item.get('publishedAt')
+    for article_item in article_list:
+        source = article_item.get('source')
+        title = article_item.get('title')
+        urlToImage = article_item.get('urlToImage')
+        description = article_item.get('description')
+        urlToArticle = article_item.get('url')
+        publishedAt = article_item.get('publishedAt')
 
-#         if publishedAt != None:
+        if publishedAt != None:
 
-#             # Call publish_date_format method to convert date to a display-friendly format
-#             date_to_display = Article.publish_date_format(publishedAt)
+            # Call publish_date_format method to convert date to a display-friendly format
+            date_to_display = Article.publish_date_format(publishedAt)
 
 
-#             article_object = Article(source,title,urlToImage,description,urlToArticle,date_to_display)
+            article_object = Article(source,title,urlToImage,description,urlToArticle,date_to_display)
 
-#             article_results.append(article_object)
+            article_results.append(article_object)
 
-#     return article_results
+    return article_results
