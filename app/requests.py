@@ -2,7 +2,7 @@ import urllib.request,json
 from .models import Source, Article
 
 # Getting api key
-api_key = None
+# api_key = None
 
 def configure_request(app):
     global api_key
