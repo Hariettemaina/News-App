@@ -64,7 +64,7 @@ def get_sources():
     Function that gets the json response to our url request
     '''
     # get_news_url = base_url.format(api_key)
-    get_sources_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=3da8ea86f3e84d3fb09b052a32f9f1fc'
+    get_sources_url = ' https://newsapi.org/v2/everything?q=bitcoin&apiKey=3da8ea86f3e84d3fb09b052a32f9f1fc'
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -96,6 +96,7 @@ def process_results(sources_list):
         name = sources_item.get('name')
         description = sources_item.get('description')
         url = sources_item.get('url')
+        
        
 
         

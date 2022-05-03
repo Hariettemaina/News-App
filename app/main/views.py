@@ -10,7 +10,7 @@ def index():
     View root page function that returns the index page and its data
     '''
     news = get_news() 
-    title = 'KIMNEWS'
+    title = 'JollyNews'
     return render_template('index.html', title = title,articles = news)
 @main.route('/sources')
 def sources():
